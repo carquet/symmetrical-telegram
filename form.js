@@ -54,9 +54,10 @@ function checkGender(){
 function finishText(){
   //confirm finishText triggers several times
   console.log("hello");
+  let regex = /she|he|they|(std)/i;
   replacement = checkGender();
 
-    let replace = commentBox.innerHTML.replace("(std)"|| "she" || "he", replacement);
+    let replace = commentBox.innerHTML.replace(regex, replacement);
   commentBox.innerHTML = replace;
   console.log(typeof(commentBox.innerHTML));
 
