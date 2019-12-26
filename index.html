@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>report maker index</title>
+</head>
+
+<body>
+	<form>
+	  Select<br>
+	    <label><input class="gender" type="radio" name="gender" value="he"> Male</label><br>
+	    <label><input class="gender" type="radio" name="gender" value="she"> Female</label><br>
+	    <label><input class="gender" type="radio" name="gender" value="they"> Other</label><br>
+	  
+	  <!--<button id="genderBtn">choose</button>-->
+	    
+	  <section id="selfStudyHomework">
+	    <label>Self study and homework: </label>
+	    <select id="selectselfStudyHomework">
+	      <option value="(std) is very consistent.">(std) is very consistent</option>
+	      <option value="(std) hands in his homework late.">(std) hands in his homework late</option>
+	      <option value="pineapple">Pineapple</option>
+	      <option value="banana">Banana</option>
+	    </select>
+	    <button type="button">Add it 1</button>
+	  </section>
+	  <section id="skills">
+	     <label>Skills: </label>
+	      <select id="selectskills">
+	      <option value="writing">Writing</option>
+	      <option value="speaking">Speaking</option>
+	      <option value="listening">Listening</option>
+	      <option value="reading">Reading</option>
+	    </select>
+	    <button type="button">Add it 2</button>
+	  </section>
+	</form>
+  <textarea id="comments"></textarea>
+<button id="finishBt">Finish</button>
+
+</body>
+<script src="form.js"></script>
+</html>
