@@ -46,7 +46,7 @@ function checkGender(){
   const ele = document.getElementsByName('gender');
     for(let i = 0; i < ele.length; i++) { 
         if(ele[i].checked) 
-          return ele[i].value;   
+          return ele[i].value + " ";   
     } 
 }
 
@@ -54,7 +54,8 @@ function checkGender(){
 function finishText(){
   //confirm finishText triggers several times
   console.log("hello");
-  let regex = /she|he|they|(std)/i;
+  //any of the three pronouns with space after
+  let regex = /she |he |they |std /ig;
   replacement = checkGender();
 
     let replace = commentBox.innerHTML.replace(regex, replacement);
