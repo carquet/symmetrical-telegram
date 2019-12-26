@@ -21,7 +21,7 @@ FORM.addEventListener("click", clickButtonAdd);
 //B. finetune the final textarea
 FINISH.addEventListener("click", finishText);
 //button that check the gender
-genderButton.addEventListener("click",checkGender);
+//genderButton.addEventListener("click",checkGender);
 
 
 //1.click on any button to retrieve the comment linked to it
@@ -35,15 +35,15 @@ function clickButtonAdd(event){
 function addComments(e) {
   //dropdown selection
  let strUser =  document.getElementById("select" + e).value;
-console.log(strUser);
   commentBox.append(strUser + " ");
   //here launch a function that count the charcates/words?
 }
 
 //replace pronouns
-let replacement = "";
+let replacement;
 // step 1/2 replace pronoun: check student's gender and return a pronoun
 function checkGender(){
+  console.log("hello");
   const ele = document.getElementsByName('gender');
     for(let i = 0; i < ele.length; i++) { 
         if(ele[i].checked) 
