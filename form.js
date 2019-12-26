@@ -43,26 +43,23 @@ function addComments(e) {
 let replacement;
 // step 1/2 replace pronoun: check student's gender and return a pronoun
 function checkGender(){
-  console.log("hello");
   const ele = document.getElementsByName('gender');
     for(let i = 0; i < ele.length; i++) { 
         if(ele[i].checked) 
-          return replacement =  ele[i].value;   
+          return ele[i].value;   
     } 
 }
 
 //step 2/2 replace pronoun: insert pronoun 
 function finishText(){
-  checkGender();
-  //check if nothing has been entered you need to leave with (std) where should this be?
-  if(replacement == ""){
-    //TODO: launch a message 
-    alert("please, select a gender");
-    console.log(replacement);
-  } else{
-    let replace = commentBox.innerHTML.replace("(std)", replacement);
+  //confirm finishText triggers several times
+  console.log("hello");
+  replacement = checkGender();
+
+    let replace = commentBox.innerHTML.replace("(std)"|| "she" || "he", replacement);
   commentBox.innerHTML = replace;
-  }
+  console.log(typeof(commentBox.innerHTML));
+
 }
 
 
