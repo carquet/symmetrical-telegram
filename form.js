@@ -16,6 +16,8 @@ const FINISH = document.querySelector("#finishBt");
 //area where the all form is with several buttons to add content
 const FORM = document.querySelector("FORM");
 
+
+//BUTTONS TO BE TRIGGERED
 //A. buttons that add comments onto the text field
 FORM.addEventListener("click", clickButtonAdd);
 //B. finetune the final textarea
@@ -26,11 +28,11 @@ FINISH.addEventListener("click", finishText);
 
 //1.click on any button to retrieve the comment linked to it
 function clickButtonAdd(event){
-
   if (event.target.nodeName == "BUTTON") {
       addComments(event.target.parentNode.id);
     }
 }
+
 //2.take what's inside the option drop down and add it in the comment box without erasing the previous comment.
 function addComments(e) {
   //dropdown selection
@@ -39,7 +41,7 @@ function addComments(e) {
   //here launch a function that count the charcates/words?
 }
 
-//replace pronouns
+//FINISHING TEXT WITH PRNOUNS REPLACEMENT
 let replacement;
 // step 1/2 replace pronoun: check student's gender and return a pronoun
 function checkGender(){
@@ -52,15 +54,20 @@ function checkGender(){
 
 //step 2/2 replace pronoun: insert pronoun 
 function finishText(){
-  //confirm finishText triggers several times
-  console.log("hello");
-  //any of the three pronouns with space after
+  // Selecting the name of the student
+  let studentName = document.getElementById("stdName").value;
+
+  //pronouns to be replaced 
   let regex = /she |he |they |std /ig;
+
+  //retrieve the preferred gender
   replacement = checkGender();
 
-    let replace = commentBox.innerHTML.replace(regex, replacement);
-  commentBox.innerHTML = replace;
-  console.log(typeof(commentBox.innerHTML));
+//check if the first word is the name retrived in studentName
+
+  let commentText = commentBox.innerHTML.replace(regex, replacement);
+  commentBox.innerHTML = commentText;
+ 
 
 }
 
